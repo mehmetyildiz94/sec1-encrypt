@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1 Dashboard
+  label Message
+  form(action="/message", method="post")
+    textarea(name="message", placeholder="message")
+    button(type="submit") Create

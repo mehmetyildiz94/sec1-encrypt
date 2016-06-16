@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1 Encrypt
+  form(action="/encrypt", method="post")
+        input(type="text", name="username", placeholder="username")
+        input(type="password", name="password", placeholder="password")
+        br
+        textarea(name="message") #{encrypted === undefined ? 'type in your message' : encrypted}
+        br
+        button(type="submit") Encrypt
+
+    h1 Decrypt
+    form(action="/decrypt", method="post")
+        input(type="text", name="username", placeholder="username")
+        input(type="password", name="password", placeholder="password")
+        br
+        textarea(name="message", placeholder="encrypted message") #{message === undefined ? '' : message}
+        br
+        button(type="submit") Decrypt
